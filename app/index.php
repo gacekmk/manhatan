@@ -3,8 +3,8 @@
 ini_set( 'display_errors', 'On' );
 error_reporting( E_ALL );
 
-require 'libs/smarty/Smarty.class.php';
-require 'libs/class/db_connect.class.php';
+require '../libs/smarty/Smarty.class.php';
+require '../libs/class/db_connect.class.php';
 
 $smarty = new Smarty;
 
@@ -14,35 +14,39 @@ $smarty->debugging = 0;
 
 	$smarty->display('header.tpl');
 
-  switch ($o) {
+  if(isset($_GET['o'])){
+  
+    switch ($_GET['o']) {
+      
+      case 'home':
+        //$smarty->assign("regulamin", $regulamin);
+    		$smarty->display('home.tpl');
+      break;
+      
+      case 'pisma':
+        //$smarty->assign("regulamin", $regulamin);
+    		$smarty->display('pisma.tpl');
+      break;
+      
+      case 'sprzet':
+        //$smarty->assign("regulamin", $regulamin);
+    		$smarty->display('sprzet.tpl');
+      break;
+      
+      case 'magazyn':
+        //$smarty->assign("regulamin", $regulamin);
+    		$smarty->display('magazyn.tpl');
+      break;
+      
+      default:
+      
+        $smarty->display('home.tpl');
+      
+      break;
+  
+      }
     
-    case 'home':
-      //$smarty->assign("regulamin", $regulamin);
-  		$smarty->display('home.tpl');
-    break;
-    
-    case 'pisma':
-      //$smarty->assign("regulamin", $regulamin);
-  		$smarty->display('pisma.tpl');
-    break;
-    
-    case 'sprzet':
-      //$smarty->assign("regulamin", $regulamin);
-  		$smarty->display('sprzet.tpl');
-    break;
-    
-    case 'magazyn':
-      //$smarty->assign("regulamin", $regulamin);
-  		$smarty->display('magazyn.tpl');
-    break;
-    
-    default:
-    
-      $smarty->display('home.tpl');
-    
-    break;
-
-  }
+    }
   
   $smarty->display('footer.tpl');
   
