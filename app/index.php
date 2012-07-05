@@ -1,33 +1,50 @@
-<?php
+<?
 
-require('../libs/smarty/Smarty.class.php');
+ini_set( 'display_errors', 'On' );
+error_reporting( E_ALL );
+
+require 'libs/smarty/Smarty.class.php';
+require 'libs/class/db_connect.class.php';
 
 $smarty = new Smarty;
 
-//$smarty->force_compile = true;
-$smarty->debugging = true;
-$smarty->caching = true;
-$smarty->cache_lifetime = 120;
+$smarty->compile_check = 0;
+$smarty->debugging = 0;
+//var_dump($db_connect);
 
-/*
+	$smarty->display('header.tpl');
 
-$smarty->assign("Name","Fred Irving Johnathan Bradley Peppergill",false);
-$smarty->assign("FirstName",array("John","Mary","James","Henry"));
-$smarty->assign("LastName",array("Doe","Smith","Johnson","Case"));
-$smarty->assign("Class",array(array("A","B","C","D"), array("E", "F", "G", "H"),
-	  array("I", "J", "K", "L"), array("M", "N", "O", "P")));
+  switch ($o) {
+    
+    case 'home':
+      //$smarty->assign("regulamin", $regulamin);
+  		$smarty->display('home.tpl');
+    break;
+    
+    case 'pisma':
+      //$smarty->assign("regulamin", $regulamin);
+  		$smarty->display('pisma.tpl');
+    break;
+    
+    case 'sprzet':
+      //$smarty->assign("regulamin", $regulamin);
+  		$smarty->display('sprzet.tpl');
+    break;
+    
+    case 'magazyn':
+      //$smarty->assign("regulamin", $regulamin);
+  		$smarty->display('magazyn.tpl');
+    break;
+    
+    default:
+    
+      $smarty->display('home.tpl');
+    
+    break;
 
-$smarty->assign("contacts", array(array("phone" => "1", "fax" => "2", "cell" => "3"),
-	  array("phone" => "555-4444", "fax" => "555-3333", "cell" => "760-1234")));
-
-$smarty->assign("option_values", array("NY","NE","KS","IA","OK","TX"));
-$smarty->assign("option_output", array("New York","Nebraska","Kansas","Iowa","Oklahoma","Texas"));
-$smarty->assign("option_selected", "NE");
-*/
-
-
-$smarty->display('header.tpl');
-$smarty->display('index.tpl');
-$smarty->display('footer.tpl');
-
+  }
+  
+  $smarty->display('footer.tpl');
+  
+  
 ?>
