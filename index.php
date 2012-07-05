@@ -12,4 +12,9 @@ $smarty->compile_check = 0;
 $smarty->debugging = 0;
 //var_dump($db_connect);
 
+
+
+
+
+
 ?>
