@@ -1,0 +1,79 @@
+body{
+  
+  margin: 0 auto;
+  background-color: #cccc99;
+  
+}
+
+
+.pojemnik{
+
+  margin: 0 auto;
+  width: 990px;
+
+}
+
+#menu{
+
+  width: 990px;
+  height: 50px;
+  background-color: #009966;
+  color: #ffffff;
+  font-family: verdana;
+  font-size: 12px;
+
+
+
+}
+
+
+.pmenu{
+  
+  padding: 15px 15px;
+  float: left;
+  width: 75px; 
+
+}
+
+#pmenup{
+
+  float: right;
+  width: 200px;
+  padding: 15px 15px;
+
+}
+
+#tresc{
+  
+  min-height: 400px;
+  padding: 30px 50px 30px 50px;
+  background-color: #ff9966;
+ 
+}
+
+.cstopka{
+
+  margin: 0 auto;
+  clear: both;   
+
+}
+
+
+#stopka{
+  
+  text-align: center;
+  padding: 10px;
+  background-color:  #6666cc;
+  font-family: verdana;
+  font-size: 11px;
+  
+}
+
+a{
+
+  text-decoration: underline;
+  color: #ffffff;
+  font-family: verdana;
+  font-size: 12px;
+
+}

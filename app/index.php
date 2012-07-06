@@ -13,6 +13,7 @@ $smarty->debugging = 0;
 //var_dump($db_connect);
 
 	$smarty->display('header.tpl');
+  $smarty->display('menu.tpl');
 
   if(isset($_GET['o'])){
   
@@ -45,6 +46,11 @@ $smarty->debugging = 0;
       break;
   
       }
+    
+    }else{
+    
+      //$smarty->assign("regulamin", $regulamin);
+    	$smarty->display('home.tpl');
     
     }
   
